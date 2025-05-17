@@ -1,3 +1,21 @@
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.profile-sidebar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+.profile-sidebar::-webkit-scrollbar {
+  display: none;
+}
+
 img {
   object-fit: cover;
   height: 260px;
@@ -5,7 +23,7 @@ img {
 .profile-image-container {
   width: 200px;
   height: 200px;
-  background-color: #e74c3c;
+  background-color: transparent;
   position: relative;
 }
 
@@ -66,8 +84,6 @@ img {
   z-index: 9999;
   display: flex;
   justify-content: center;
-  background-color: #111;
-  pointer-events: none;
 }
 
 .navbar-content {
@@ -76,6 +92,7 @@ img {
   padding: 0.8rem 1.5rem;
   backdrop-filter: blur(10px);
   pointer-events: auto;
+  border-radius: 10rem;
 }
 
 .nav-item {
@@ -285,7 +302,6 @@ img {
   text-align: center;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .tech-card {
     min-height: 120px;

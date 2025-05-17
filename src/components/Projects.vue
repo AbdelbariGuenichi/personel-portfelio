@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import ecommerceImage from '@/assets/pictures/ecommerce-platform-project.png'
+import taskManagementImage from '@/assets/pictures/task-management-project.png'
 
 interface Project {
   title: string
@@ -16,7 +18,7 @@ const projects = ref<Project[]>([
     description:
       'A full-featured online shopping platform with cart management and payment integration.',
     technologies: ['Vue.js', 'TypeScript', 'Bootstrap', 'Node.js'],
-    image: '../assets/pictures/ecommerce-platform-project.png',
+    image: ecommerceImage,
     liveDemo: 'https://demo-ecommerce.com',
     github: 'https://github.com/yourusername/ecommerce',
   },
@@ -24,7 +26,7 @@ const projects = ref<Project[]>([
     title: 'Task Management App',
     description: 'A collaborative task management tool with real-time updates and team features.',
     technologies: ['Vue.js', 'Vuex', 'Firebase', 'Tailwind CSS'],
-    image: '../assets/pictures/task-management-project.png',
+    image: taskManagementImage,
     liveDemo: 'https://task-manager-demo.com',
     github: 'https://github.com/yourusername/taskmanager',
   },

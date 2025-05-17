@@ -36,7 +36,7 @@ const stats = ref({
       <div class="profile-image-container rounded-4 overflow-hidden mb-3">
         <img src="../assets/pictures/profile-picture.jpg" class="img-fluid" alt="Profile Image" />
       </div>
-      <h3 class="fw-bold text-dark">Abdelbarry Guenichi</h3>
+      <h3 class="fw-bold text-dark text-center">Abdelbarry Guenichi</h3>
       <p class="text-muted small text-center">
         A Software Engineer who has developed countless innovative solutions that help businesses
         grow.
