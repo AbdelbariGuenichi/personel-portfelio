@@ -1,12 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faHome, faFolder, faWrench, faPenToSquare } from '@fortawesome/free-solid-svg-icons'
+import { Icon } from '@iconify/vue'
 
-library.add(faHome, faFolder, faWrench, faPenToSquare)
-
-const activeLink = ref('home')
+const activeLink: string = ref('home')
 
 const setActive = (link: string) => {
   activeLink.value = link
@@ -40,8 +36,9 @@ onMounted(() => {
         @click="setActive('home')"
         :class="{ active: activeLink === 'home' }"
         class="nav-item"
+        title="Home"
       >
-        <FontAwesomeIcon :icon="['fas', 'home']" />
+        <Icon icon="mdi:home" width="30" height="30" />
       </a>
       <a
         href="#projects"
@@ -49,7 +46,7 @@ onMounted(() => {
         :class="{ active: activeLink === 'projects' }"
         class="nav-item"
       >
-        <FontAwesomeIcon :icon="['fas', 'folder']" />
+        <Icon icon="mdi:folder" width="30" height="30" />
       </a>
       <a
         href="#skills"
@@ -57,7 +54,7 @@ onMounted(() => {
         :class="{ active: activeLink === 'skills' }"
         class="nav-item"
       >
-        <FontAwesomeIcon :icon="['fas', 'wrench']" />
+        <Icon icon="mdi:wrench" width="30" height="30" />
       </a>
       <a
         href="#contact"
@@ -65,7 +62,7 @@ onMounted(() => {
         :class="{ active: activeLink === 'contact' }"
         class="nav-item"
       >
-        <FontAwesomeIcon :icon="['fas', 'pen-to-square']" />
+        <Icon icon="mdi:pencil-box" width="30" height="30" />
       </a>
     </div>
   </nav>

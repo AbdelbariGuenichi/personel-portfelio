@@ -1,49 +1,21 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCode, faToolbox, faServer, faGlobe } from '@fortawesome/free-solid-svg-icons'
-import {
-  faJs,
-  faVuejs,
-  faHtml5,
-  faCss3Alt,
-  faBootstrap,
-  faSass,
-  faGitAlt,
-  faGithub,
-} from '@fortawesome/free-brands-svg-icons'
-
-library.add(
-  faCode,
-  faToolbox,
-  faServer,
-  faGlobe,
-  faJs,
-  faVuejs,
-  faHtml5,
-  faCss3Alt,
-  faBootstrap,
-  faSass,
-  faGitAlt,
-  faGithub,
-)
+import { Icon } from '@iconify/vue'
 
 const frontendStack = ref([
-  { name: 'JavaScript', bgColor: '#F7DF1E', textColor: '#000000', icon: ['fab', 'js'] },
-  { name: 'TypeScript', bgColor: '#3178C6', textColor: '#FFFFFF', icon: ['fab', 'js'] },
-  { name: 'Vue.js', bgColor: '#4FC08D', textColor: '#FFFFFF', icon: ['fab', 'vuejs'] },
-  { name: 'HTML', bgColor: '#E34F26', textColor: '#FFFFFF', icon: ['fab', 'html5'] },
-  { name: 'CSS', bgColor: '#1572B6', textColor: '#FFFFFF', icon: ['fab', 'css3-alt'] },
-  { name: 'Bootstrap', bgColor: '#7952B3', textColor: '#FFFFFF', icon: ['fab', 'bootstrap'] },
-  { name: 'Sass', bgColor: '#CC6699', textColor: '#FFFFFF', icon: ['fab', 'sass'] },
+  { name: 'JavaScript', icon: 'logos:javascript' },
+  { name: 'TypeScript', icon: 'logos:typescript-icon' },
+  { name: 'Vue.js', icon: 'logos:vue' },
+  { name: 'HTML', icon: 'logos:html-5' },
+  { name: 'CSS', icon: 'logos:css-3' },
+  { name: 'Bootstrap', icon: 'logos:bootstrap' },
+  { name: 'Sass', icon: 'logos:sass' },
 ])
 
 const toolsStack = ref([
-  { name: 'Git', bgColor: '#F05032', textColor: '#FFFFFF', icon: ['fab', 'git-alt'] },
-  { name: 'GitHub', bgColor: '#181717', textColor: '#FFFFFF', icon: ['fab', 'github'] },
-  { name: 'Vercel', bgColor: '#000000', textColor: '#FFFFFF', icon: ['fas', 'server'] },
-  { name: 'Netlify', bgColor: '#00C7B7', textColor: '#FFFFFF', icon: ['fas', 'globe'] },
+  { name: 'Git', icon: 'logos:git-icon' },
+  { name: 'GitHub', icon: 'mdi:github' },
+  { name: 'Netlify', icon: 'logos:netlify' },
 ])
 </script>
 
@@ -62,46 +34,51 @@ const toolsStack = ref([
       <div class="stack-section mb-5">
         <h3 class="text-white mb-4 d-flex align-items-center">
           <span class="stack-icon me-3">
-            <FontAwesomeIcon :icon="['fas', 'code']" />
+            <Icon icon="mdi:code" />
           </span>
           FRONTEND
         </h3>
-        <div class="row g-4">
-          <div v-for="tech in frontendStack" :key="tech.name" class="col-6 col-md-4 col-lg-3">
-            <div
-              class="tech-card"
-              :style="{ backgroundColor: tech.bgColor, color: tech.textColor }"
-            >
-              <div class="tech-icon">
-                <FontAwesomeIcon :icon="tech.icon" />
-              </div>
-              <div class="tech-name">{{ tech.name }}</div>
-            </div>
-          </div>
+        <div class="d-flex gap-4 flex-wrap">
+          <Icon
+            v-for="tech in frontendStack"
+            :key="tech.name"
+            :icon="tech.icon"
+            class="tech-icon"
+            width="48"
+            height="48"
+          />
         </div>
       </div>
 
       <div class="stack-section">
         <h3 class="text-white mb-4 d-flex align-items-center">
           <span class="stack-icon me-3">
-            <FontAwesomeIcon :icon="['fas', 'toolbox']" />
+            <Icon icon="mdi:toolbox" />
           </span>
           TOOLS
         </h3>
-        <div class="row g-4">
-          <div v-for="tech in toolsStack" :key="tech.name" class="col-6 col-md-4 col-lg-3">
-            <div
-              class="tech-card"
-              :style="{ backgroundColor: tech.bgColor, color: tech.textColor }"
-            >
-              <div class="tech-icon">
-                <FontAwesomeIcon :icon="tech.icon" />
-              </div>
-              <div class="tech-name">{{ tech.name }}</div>
-            </div>
-          </div>
+        <div class="d-flex gap-4 flex-wrap">
+          <Icon
+            v-for="tech in toolsStack"
+            :key="tech.name"
+            :icon="tech.icon"
+            class="tech-icon"
+            width="48"
+            height="48"
+          />
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<style scoped>
+.tech-icon {
+  transition: transform 0.2s ease;
+  color: white;
+}
+
+.tech-icon:hover {
+  transform: scale(1.2);
+}
+</style>

@@ -3,9 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
 import { createApp } from 'vue'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { Icon } from '@iconify/vue'
 import App from './App.vue'
 
 const app = createApp(App)
-app.component('font-awesome-icon', FontAwesomeIcon)
+app.component('font-awesome-icon', Icon)
 app.mount('#app')

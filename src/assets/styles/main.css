@@ -529,3 +529,50 @@ img {
     padding: 1.5rem 0.75rem;
   }
 }
+.download-cv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+.download-cv-btn:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+  color: white;
+}
+
+.download-cv-btn:active {
+  transform: translateY(0);
+}
+
+.download-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.download-cv-btn:hover .download-icon {
+  transform: translateY(2px);
+}
+
+@media (max-width: 576px) {
+  .download-cv-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .download-icon {
+    font-size: 1rem;
+  }
+}
