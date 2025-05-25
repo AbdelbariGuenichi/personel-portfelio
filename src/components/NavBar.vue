@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue'
 import { Icon } from '@iconify/vue'
 
-const activeLink: string = ref('home')
+const activeLink = ref('home')
 
 const setActive = (link: string) => {
   activeLink.value = link
